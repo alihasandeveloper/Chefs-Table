@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1, h3, h4, h5, h6, h2, li, button, button a{
+        font-family: "Lexend", serif;
+    }
+    h2 {
+        @apply text-xl font-semibold text-[#282828];
+    }
+    p, a, span {
+        font-family: "Fira Sans", sans-serif;
+    }
+
+}
+
+@layer utilities {
+    .primary-color {
+        color: #150B2B;
+    }
+    .gray-color {
+        color: rgba(21, 11, 43, 0.60);
+    }
+    .text-color {
+        color: #282828;
+    }
+    .secondary-color {
+        color: rgba(21, 11, 43, 0.70);
+    }
+    .bg-theme {
+        background: rgba(21, 11, 43, 0.05);
+    }
+    .theme-bg {
+        background: #0BE58A;
+    }.theme-color {
+        color: #0BE58A;
+    }
+    .banner-bg {
+        background: url("/src/assets/images/banner-bg.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
