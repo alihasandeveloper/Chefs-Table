@@ -19,7 +19,6 @@ const Cookings = ({cookings}) => {
                     {
                         cookings.map(cooking => (<Cooking  key={cooking.recipe_id} cooking={cooking}/>))
                     }
-
                     </tbody>
                 </table>
 

@@ -1,16 +1,27 @@
 import Cookitems from "../CookItems/Cookitems.jsx";
 import Cookings from "../Cookings/Cookings.jsx";
 import {useState} from "react";
+import Alerts from "../Alerts/Alerts.jsx";
 
 const Menu = () => {
 
     const [cookings, setCookings] = useState([]);
 
 
-    function cookHandeler(cookItems) {
-        const newCookings = [...cookings, cookItems];
-        setCookings(newCookings);
+    const  cookHandler =(cookItems) =>{
+        const ifExists = cookings.some(cooking => cooking.recipe_id  === cookItems.recipe_id);
+
+        if(!ifExists){
+            const newCookings = [...cookings, cookItems];
+            setCookings(newCookings);
+        }
+        else {
+            // return <Alerts/>;
+            alert("Cookings could not be found.")
+        }
+
     }
+
     // console.log(cookings);
     return (
         <div>
@@ -22,7 +33,7 @@ const Menu = () => {
             </div>
             <div className='flex'>
                 <div className='w-2/3'>
-                    <Cookitems cookHandeler={cookHandeler}/>
+                    <Cookitems cookHandeler={cookHandler}/>
                 </div>
                 <div className='border border-gray-200 rounded-2xl w-1/3 h-[685px] p-6'>
                     <Cookings cookings={cookings}/>
